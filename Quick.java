@@ -1,14 +1,30 @@
 public class Quick {
 
 
+  public static int quickselect(int[] data, int k) {
+    int l = 0;
+    int u = data.length-1;
+    int i = partition(data,l,u);
+    while(i != k) {
+      if(k < i) {
+        u = i-1;
+        partition(data,l,u);
+      }
+      else {
+        l = i+1;
+        partition(data,l,u);
+      }
+    }
+    return data[i];
+
+  }
 
 
 
 
 
 
-
-  public static int partition (int [] data, int start, int end){
+  public static int partition (int[] data, int start, int end){
 		Random r = new Random(System.currentTimeMillis());
 		int pivot = Math.abs((r.nextInt() % (end - start + 1)) + start);
 		int temp = data[pivot];
