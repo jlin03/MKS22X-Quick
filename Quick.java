@@ -63,32 +63,6 @@ public class Quick {
 			data[center] = data[pivot];
 			data[pivot] = temp;
 		}
-		int centerD = center;
-		int centerU = center;
-		while(centerU > data.length && data[centerD] == data[center]) {
-			centerD--;
-		}
-		while(centerU < data.length && data[centerU] == data[center]) {
-			centerU++;
-		}
-
-		for(int i = start; i <= end; i++) {
-			if(data[i] == data[center]) {
-				if(i < centerD) {
-					temp = data[centerD];
-					data[centerD] = data[i];
-					data[i] = temp;
-					centerD--;
-				}
-				if(i > centerU) {
-					temp = data[centerU];
-					data[centerU] = data[i];
-					data[i] = temp;
-					centerU++;
-				}
-			}
-		}
-		}
 		return center;
 
 
