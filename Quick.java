@@ -7,7 +7,12 @@ public class Quick {
     int l = 0;
     int u = data.length-1;
     int i = partition(data,l,u);
-    while(i != k) {
+    int n = 5;
+    while(n != 0) {
+      System.out.println(l);
+      System.out.println(u);
+      System.out.println(i);
+      System.out.println(Arrays.toString(data));
       if(k < i) {
         u = i-1;
         partition(data,l,u);
@@ -16,14 +21,12 @@ public class Quick {
         l = i+1;
         partition(data,l,u);
       }
+      System.out.println(Arrays.toString(data));
+      n--;
     }
     return data[i];
 
   }
-
-
-
-
 
 
   public static int partition (int[] data, int start, int end){
@@ -63,11 +66,16 @@ public class Quick {
 			data[center] = data[pivot];
 			data[pivot] = temp;
 		}
-		return center;
-
-
-
 	}
+  return center;
+}
+
+  public static void main(String[] args) {
+    int[] ary = {2,10,15,23,0,5};
+    System.out.println(quickselect(ary,0));
+
+
+  }
 
 
 
