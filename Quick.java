@@ -3,29 +3,26 @@ import java.util.*;
 public class Quick {
 
 
+
+
+
   public static int quickselect(int[] data, int k) {
     int l = 0;
     int u = data.length-1;
     int i = partition(data,l,u);
     int n = 5;
-    while(n != 0) {
-      System.out.println(l);
-      System.out.println(u);
-      System.out.println(i);
-      System.out.println(Arrays.toString(data));
+    while(k != i) {
       if(k < i) {
         u = i-1;
-        partition(data,l,u);
+        i = partition(data,l,u);
       }
       else {
         l = i+1;
-        partition(data,l,u);
+        i = partition(data,l,u);
       }
-      System.out.println(Arrays.toString(data));
       n--;
     }
     return data[i];
-
   }
 
 
@@ -72,7 +69,7 @@ public class Quick {
 
   public static void main(String[] args) {
     int[] ary = {2,10,15,23,0,5};
-    System.out.println(quickselect(ary,0));
+    System.out.println(quickselect(ary,4));
 
 
   }
