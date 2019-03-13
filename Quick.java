@@ -3,7 +3,7 @@ import java.util.*;
 public class Quick {
 
 
-  public static void quickSort(int[] data) {
+  public static void quicksort(int[] data) {
     quickSH(data,0,data.length-1);
   }
 
@@ -13,7 +13,7 @@ public class Quick {
     }
     int k = partition(data,l,h);
     quickSH(data,l,k-1);
-    quickSH(data,k+1,l);
+    quickSH(data,k+1,h);
   }
 
   public static int quickselect(int[] data, int k) {
@@ -79,7 +79,13 @@ public class Quick {
 
   public static void main(String[] args) {
     Random r = new Random((int)System.currentTimeMillis());
-    for(int)
+	int x = 1000;
+	int[] data = new int[x];
+    for(int i = 0; i < x; i++) {
+		data[i] = r.nextInt() % 100;
+	}
+	quicksort(data);
+	System.out.println(Arrays.toString(data));
 
 
   }
