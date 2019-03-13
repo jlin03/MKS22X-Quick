@@ -3,8 +3,18 @@ import java.util.*;
 public class Quick {
 
 
+  public static void quickSort(int[] data) {
+    quickSH(data,0,data.length-1);
+  }
 
-
+  private static void quickSH(int[] data, int l, int h) {
+    if(l >= h) {
+      return;
+    }
+    int k = partition(data,l,h);
+    quickSH(data,l,k-1);
+    quickSH(data,k+1,l);
+  }
 
   public static int quickselect(int[] data, int k) {
     int l = 0;
@@ -26,7 +36,7 @@ public class Quick {
   }
 
 
-  public static int partition (int[] data, int start, int end){
+  public static int partition(int[] data, int start, int end){
 		Random r = new Random(System.currentTimeMillis());
 		int pivot = Math.abs((r.nextInt() % (end - start + 1)) + start);
 		int temp = data[pivot];
@@ -68,8 +78,8 @@ public class Quick {
 }
 
   public static void main(String[] args) {
-    int[] ary = {2,10,15,23,0,5};
-    System.out.println(quickselect(ary,4));
+    Random r = new Random((int)System.currentTimeMillis());
+    for(int)
 
 
   }
